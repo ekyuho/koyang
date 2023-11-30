@@ -12,10 +12,10 @@ Led led4(25);
 Led led5(22);
 Led led6(23);
 
-//const char* ssid     = "GY_Chil_Museum Free";
-//const char* password = "goyang600";
-const char* ssid     = "cookie2";
-const char* password = "0317137263";
+const char* ssid     = "GY_Chil_Museum FREE";
+const char* password = "goyang600";
+//const char* ssid     = "cookie2";
+//const char* password = "0317137263";
 int myid=1;
 
 unsigned s=1;
@@ -48,13 +48,14 @@ void setup(void)
 	Serial.begin(115200);
 	delay(1000);
 
+	Serial.printf("\n\n Trying WiFi %s", ssid);
 	WiFi.begin(ssid, password);
 	while (WiFi.status() != WL_CONNECTED) {
 		delay(500);
 		Serial.print(".");
 	}
 
-	Serial.println("");
+
 	Serial.println("WiFi connected");
 	Serial.print("IP address: ");
 	Serial.println(WiFi.localIP());
